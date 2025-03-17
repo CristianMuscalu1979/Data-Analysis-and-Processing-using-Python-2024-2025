@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from lansator.views import zile_pana_la_lansare, nume_racheta_views
+from lansator.views import zile_pana_la_lansare, nume_racheta_views,racheta_template_views, today_view
+from culori.views import random_color_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('lansare/',zile_pana_la_lansare),
     path('nume/', nume_racheta_views),
+    path("", racheta_template_views),
+    path("azi", today_view),
+    path("culori", random_color_view),
 ]
